@@ -1,0 +1,260 @@
+/* ─── Search bar trigger ─── */
+.docs-search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+  width: 220px;
+  /* Dark mode defaults */
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  color: #71717a;
+}
+
+.docs-search-trigger:hover {
+  border-color: #3f3f46;
+  background: #161616;
+}
+
+.docs-search-trigger kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.69rem;
+  font-family: inherit;
+  line-height: 1.4;
+  /* Dark */
+  background: #1c1c1c;
+  border: 1px solid #3f3f46;
+  color: #52525b;
+}
+
+/* Light mode overrides */
+:root:not(.dark) .docs-search-trigger {
+  background: #f4f4f5;
+  border-color: #e4e4e7;
+  color: #71717a;
+}
+
+:root:not(.dark) .docs-search-trigger:hover {
+  background: #ebebeb;
+  border-color: #d4d4d8;
+}
+
+:root:not(.dark) .docs-search-trigger kbd {
+  background: #ffffff;
+  border-color: #d4d4d8;
+  color: #a1a1aa;
+}
+
+/* ─── Modal overlay ─── */
+.docs-search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  animation: overlayFadeIn 0.15s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ─── Modal box ─── */
+.docs-search-modal {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: modalSlideIn 0.15s ease;
+  /* Dark */
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.75);
+}
+
+:root:not(.dark) .docs-search-modal {
+  background: #ffffff;
+  border-color: #e4e4e7;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Modal input row ─── */
+.docs-search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  /* Dark */
+  border-bottom: 1px solid #1c1c1c;
+}
+
+:root:not(.dark) .docs-search-input-row {
+  border-bottom-color: #f0f0f0;
+}
+
+.docs-search-input-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  /* Dark */
+  color: #ffffff;
+  caret-color: #a78bfa;
+}
+
+:root:not(.dark) .docs-search-input-row input {
+  color: #111111;
+  caret-color: #7c3aed;
+}
+
+.docs-search-input-row input::placeholder {
+  color: #52525b;
+}
+
+:root:not(.dark) .docs-search-input-row input::placeholder {
+  color: #a1a1aa;
+}
+
+.docs-search-esc-key {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-family: inherit;
+  /* Dark */
+  background: #1c1c1c;
+  border: 1px solid #3f3f46;
+  color: #71717a;
+}
+
+:root:not(.dark) .docs-search-esc-key {
+  background: #f4f4f5;
+  border-color: #d4d4d8;
+  color: #a1a1aa;
+}
+
+/* ─── Results ─── */
+.docs-search-results {
+  padding: 8px 0;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.docs-search-result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.1s;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+
+.docs-search-result-item:hover {
+  background: #161616;
+  border-left-color: #a78bfa;
+}
+
+:root:not(.dark) .docs-search-result-item:hover {
+  background: #f4f4f5;
+  border-left-color: #7c3aed;
+}
+
+.docs-search-result-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  /* Dark */
+  color: #e4e4e7;
+}
+
+:root:not(.dark) .docs-search-result-title {
+  color: #111111;
+}
+
+.docs-search-result-excerpt {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  /* Dark */
+  color: #52525b;
+}
+
+:root:not(.dark) .docs-search-result-excerpt {
+  color: #71717a;
+}
+
+.docs-search-empty {
+  padding: 28px 16px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #52525b;
+}
+
+:root:not(.dark) .docs-search-empty {
+  color: #a1a1aa;
+}
+
+.docs-search-section-label {
+  padding: 6px 16px 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  /* Dark */
+  color: #3f3f46;
+}
+
+:root:not(.dark) .docs-search-section-label {
+  color: #a1a1aa;
+}
+
+/* ─── Mark highlight ─── */
+.docs-search-result-title mark,
+.docs-search-result-excerpt mark {
+  background: transparent;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+:root:not(.dark) .docs-search-result-title mark,
+:root:not(.dark) .docs-search-result-excerpt mark {
+  color: #7c3aed;
+}
+
+/* ─── Scrollbar inside modal ─── */
+.docs-search-results::-webkit-scrollbar { width: 4px; }
+.docs-search-results::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+:root:not(.dark) .docs-search-results::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+}
+
+/* ─── Nextra navbar layout fix ─── */
+/* Make the nextra navbar nav use relative so our centered search works */
+.nextra-navbar nav {
+  position: relative;
+}

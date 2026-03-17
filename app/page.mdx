@@ -1,0 +1,96 @@
+import Image from 'next/image';
+import beanBag from './assets/images/bean-bag.jpg';
+
+# Introduction
+
+MoadBus is the developer platform that helps you understand code, debug issues,
+and ship faster because it understands your codebase. Use Agent, Next Edit, and
+Code Completions to get more done.
+
+## Get started in minutes
+
+Install the extension and connect your repository to get up and running in minutes.
+Supports VS Code, JetBrains, and the CLI.
+
+```bash
+npm install -g my-cli
+my-cli init
+```
+
+## Features
+
+- **Agent** — Autonomous coding assistant that understands your full codebase
+- **Chat** — Ask questions, get answers grounded in your actual code
+- **Completions** — Fast, context-aware inline completions
+
+## Adding Images
+
+You can embed images in any MDX page using Next.js's `Image` component.
+Import the image at the top of the file, then use it like a React component:
+
+```mdx
+import Image from 'next/image';
+import myImage from './assets/images/bean-bag.jpg';
+
+<Image src={myImage} alt="Bean bag" />
+```
+
+Here's our bean-bag image rendered live:
+
+<Image
+  src={beanBag}
+  alt="Bean bag"
+  style={{ borderRadius: '10px', marginTop: '1rem' }}
+/>
+
+> **Tip:** When you import a local image (`.jpg`, `.png`, `.webp`), Next.js automatically
+> provides the `width`, `height`, and `blurDataURL` — no need to specify them manually.
+> For remote URLs, you must provide `width` and `height` props explicitly.
+
+## Adding Code Blocks
+
+Wrap your code in triple backticks ( ` ``` ` ) and specify the language for syntax highlighting.
+You can use `bash`, `python`, `typescript`, `javascript`, `json`, `yaml`, and more.
+
+Hover over any code block to reveal the **copy to clipboard** button in the top-right corner.
+
+### Basic example
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+### With a filename label
+
+Add `filename="..."` right after the language to show a tab above the block:
+
+```typescript filename="utils/greet.ts"
+export function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+```
+
+### Highlighting specific lines
+
+Add `{line numbers}` after the language to highlight particular lines:
+
+```javascript {2,4}
+function add(a, b) {
+  const result = a + b; // highlighted
+  console.log(result);
+  return result;         // highlighted
+}
+```
+
+### Shell / terminal commands
+
+```bash filename="Terminal"
+npm install -g my-cli
+my-cli init --project my-app
+```
+
+## Learn more
+
+Explore the sidebar to learn about models, configuration, and IDE-specific setup guides.
