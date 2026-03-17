@@ -11,13 +11,10 @@ export default {
     type: 'separator',
     title: 'Configuration',
   },
-  'rules-guidelines': 'Rules & Guidelines',
-  'github-app': 'Install GitHub App',
+  configuration: 'Setup & Rules',
   '-- vscode': {
     type: 'separator',
     title: 'Visual Studio Code',
   },
-  'setup-vscode': 'Setup',
-  agent: 'Agent',
-  chat: 'Chat',
+  vscode: 'Extension Guide',
 };
