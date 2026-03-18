@@ -15,9 +15,9 @@ html, body, * {
 :root {
   /* bg: pure white in light mode */
   --nextra-bg: 255,255,255;
-  --nextra-primary-hue: 147deg;
-  --nextra-primary-saturation: 64%;
-  --nextra-primary-lightness: 38%;
+  --nextra-primary-hue: 230deg;
+  --nextra-primary-saturation: 74%;
+  --nextra-primary-lightness: 67%;
   --nextra-navbar-height: 60px;
   --nextra-content-width: 90rem;
 }
@@ -25,7 +25,7 @@ html, body, * {
 .dark {
   /* bg: deep dark in dark mode */
   --nextra-bg: 11,11,15;
-  --nextra-primary-lightness: 52%;
+  --nextra-primary-lightness: 67%;
 }
 
 /* ════════════════════════════════════════════════════════
@@ -40,8 +40,8 @@ html, body, * {
   --c-text:         #111111;
   --c-muted:        #6b7280;
   --c-faint:        #9ca3af;
-  --c-accent:       #16a34a;
-  --c-accent-bg:    rgba(22,163,74,0.08);
+  --c-accent:       #667eea;
+  --c-accent-bg:    rgba(102,126,234,0.12);
   --c-nav-bg:       rgba(255,255,255,0.9);
 }
 
@@ -55,10 +55,10 @@ html, body, * {
   --c-border:       #1e1e2a;
   --c-border-sub:   #191921;
   --c-text:         #e2e8f0;
-  --c-muted:        #8892a4;
+  --c-muted:        #A1A2A1;
   --c-faint:        #4b5563;
-  --c-accent:       #4ade80;
-  --c-accent-bg:    rgba(74,222,128,0.09);
+  --c-accent:       #667eea;
+  --c-accent-bg:    rgba(102,126,234,0.16);
   --c-nav-bg:       rgba(11,11,15,0.9);
 }
 
@@ -86,10 +86,11 @@ body { background: var(--c-bg) !important; color: var(--c-text) !important; }
 /* Active link */
 .nextra-sidebar a[class*="bg-primary"],
 .nextra-sidebar a[aria-current="page"],
-.nextra-sidebar li.active > a {
-  background: var(--c-accent-bg) !important;
-  color: var(--c-accent) !important;
-  font-weight: 600 !important;
+.nextra-sidebar li.active > a,
+.nextra-sidebar button {
+  /* background: var(--c-accent-bg) !important; */
+  color: var(--c-muted) !important;
+  font-weight: 400 !important;
 }
 
 /* Category labels */
@@ -188,6 +189,20 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
 .theme-toggle-btn:hover {
   background: var(--c-border-sub);
   color: var(--c-text);
+}
+
+.nextra-navbar nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nextra-navbar nav > a {
+  margin-inline-end: 0 !important;
+}
+
+.nextra-navbar nav .nextra-scrollbar,
+.nextra-sidebar .nextra-sidebar-footer {
+  display: none !important;
 }
 
 /* ════════════════════════════════════════════════════════

@@ -29,19 +29,19 @@ export default function CustomNavbar() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 2L2 7l10 5 10-5-10-5z"
-            stroke="#a78bfa"
+            stroke="#667eea"
             strokeWidth="1.5"
             strokeLinejoin="round"
           />
           <path
             d="M2 17l10 5 10-5"
-            stroke="#a78bfa"
+            stroke="#667eea"
             strokeWidth="1.5"
             strokeLinejoin="round"
           />
           <path
             d="M2 12l10 5 10-5"
-            stroke="#6d5fd4"
+            stroke="#5268d6"
             strokeWidth="1.5"
             strokeLinejoin="round"
           />
@@ -154,7 +154,7 @@ export default function CustomNavbar() {
             background: '#161616',
             border: '1px solid #2a2a2a',
             borderRadius: '8px',
-            color: '#a78bfa',
+            color: '#667eea',
             fontSize: '0.8rem',
             fontWeight: 500,
             textDecoration: 'none',

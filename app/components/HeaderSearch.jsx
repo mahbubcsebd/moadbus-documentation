@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 
 // ─── Pagefind Integration ─────────────────────────────────────────────────────
 let pagefind = null;
@@ -9,7 +9,7 @@ async function loadPagefind() {
   if (pagefind) return pagefind;
   try {
     // Pagefind is generated at build time inside /_next/... or /pagefind
-    pagefind = await import(/* webpackIgnore: true */ '/pagefind/pagefind.js');
+    pagefind = await import(/* webpackIgnore: true */ "/pagefind/pagefind.js");
     await pagefind.init();
   } catch {
     pagefind = null;
@@ -18,7 +18,7 @@ async function loadPagefind() {
 }
 
 // ─── Search Icons ─────────────────────────────────────────────────────────────
-function SearchIcon({ size = 16, color = 'currentColor' }) {
+function SearchIcon({ size = 16, color = "currentColor" }) {
   return (
     <svg
       width={size}
@@ -59,7 +59,7 @@ function PageIcon({ size = 14 }) {
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function HeaderSearch() {
   const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -76,7 +76,7 @@ export default function HeaderSearch() {
 
   const closeModal = useCallback(() => {
     setOpen(false);
-    setQuery('');
+    setQuery("");
     setResults([]);
     setActiveIndex(0);
   }, []);
@@ -84,34 +84,34 @@ export default function HeaderSearch() {
   // Global keyboard shortcuts
   useEffect(() => {
     const onKey = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
         open ? closeModal() : openModal();
       }
-      if (e.key === 'Escape' && open) closeModal();
+      if (e.key === "Escape" && open) closeModal();
     };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [open, openModal, closeModal]);
 
   // Keyboard nav inside modal
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => {
-      if (e.key === 'ArrowDown') {
+      if (e.key === "ArrowDown") {
         e.preventDefault();
         setActiveIndex((i) => Math.min(i + 1, results.length - 1));
-      } else if (e.key === 'ArrowUp') {
+      } else if (e.key === "ArrowUp") {
         e.preventDefault();
         setActiveIndex((i) => Math.max(i - 1, 0));
-      } else if (e.key === 'Enter' && results[activeIndex]) {
+      } else if (e.key === "Enter" && results[activeIndex]) {
         e.preventDefault();
         window.location.href = results[activeIndex].url;
         closeModal();
       }
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [open, results, activeIndex, closeModal]);
 
   // Search with Pagefind
@@ -129,14 +129,14 @@ export default function HeaderSearch() {
     }
     const raw = await pf.search(q);
     const data = await Promise.all(
-      raw.results.slice(0, 8).map((r) => r.data())
+      raw.results.slice(0, 8).map((r) => r.data()),
     );
     setResults(
       data.map((item) => ({
         url: item.url,
         title: item.meta?.title || item.url,
-        excerpt: item.excerpt || '',
-      }))
+        excerpt: item.excerpt || "",
+      })),
     );
     setActiveIndex(0);
     setLoading(false);
@@ -153,12 +153,12 @@ export default function HeaderSearch() {
   // Scroll active result into view
   useEffect(() => {
     const el = resultsRef.current?.children[activeIndex];
-    el?.scrollIntoView({ block: 'nearest' });
+    el?.scrollIntoView({ block: "nearest" });
   }, [activeIndex]);
 
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
-    <>
+    <div style={{ display: "flex", gap: "15px" }}>
       {/* Trigger button in the navbar */}
       <button
         onClick={openModal}
@@ -166,9 +166,11 @@ export default function HeaderSearch() {
         className="docs-search-trigger"
       >
         <SearchIcon size={14} />
-        <span style={{ flex: 1, textAlign: 'left' }}>Search...</span>
+        <span style={{ flex: 1, textAlign: "left" }}>Search...</span>
         <kbd>Ctrl K</kbd>
       </button>
+      {/* Ask AI button */}
+      <button className="nav-ask-ai-btn">✦ Ask AI</button>
 
       {/* Modal */}
       {open && (
@@ -200,9 +202,7 @@ export default function HeaderSearch() {
             {/* Results area */}
             <div className="docs-search-results" ref={resultsRef}>
               {/* Loading */}
-              {loading && (
-                <div className="docs-search-empty">Searching...</div>
-              )}
+              {loading && <div className="docs-search-empty">Searching...</div>}
 
               {/* Empty state */}
               {!loading && !query && (
@@ -222,7 +222,7 @@ export default function HeaderSearch() {
               {!loading && results.length > 0 && (
                 <>
                   <div className="docs-search-section-label">
-                    {results.length} result{results.length !== 1 ? 's' : ''}
+                    {results.length} result{results.length !== 1 ? "s" : ""}
                   </div>
                   {results.map((r, i) => (
                     <a
@@ -232,8 +232,8 @@ export default function HeaderSearch() {
                       style={
                         i === activeIndex
                           ? {
-                              background: 'var(--nextra-bg)',
-                              borderLeftColor: '#a78bfa',
+                              background: "var(--nextra-bg)",
+                              borderLeftColor: "#667eea",
                             }
                           : {}
                       }
@@ -243,9 +243,7 @@ export default function HeaderSearch() {
                       <span className="docs-search-result-title">
                         <PageIcon />
                         &nbsp;
-                        <span
-                          dangerouslySetInnerHTML={{ __html: r.title }}
-                        />
+                        <span dangerouslySetInnerHTML={{ __html: r.title }} />
                       </span>
                       {r.excerpt && (
                         <span
@@ -261,6 +259,6 @@ export default function HeaderSearch() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

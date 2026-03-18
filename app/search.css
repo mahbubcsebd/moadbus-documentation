@@ -9,7 +9,7 @@
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
   white-space: nowrap;
-  width: 220px;
+  width: 320px;
   /* Dark mode defaults */
   background: #111111;
   border: 1px solid #2a2a2a;
@@ -121,12 +121,12 @@
   font-family: inherit;
   /* Dark */
   color: #ffffff;
-  caret-color: #a78bfa;
+  caret-color: #667eea;
 }
 
 :root:not(.dark) .docs-search-input-row input {
   color: #111111;
-  caret-color: #7c3aed;
+  caret-color: #667eea;
 }
 
 .docs-search-input-row input::placeholder {
@@ -175,12 +175,12 @@
 
 .docs-search-result-item:hover {
   background: #161616;
-  border-left-color: #a78bfa;
+  border-left-color: #667eea;
 }
 
 :root:not(.dark) .docs-search-result-item:hover {
   background: #f4f4f5;
-  border-left-color: #7c3aed;
+  border-left-color: #667eea;
 }
 
 .docs-search-result-title {
@@ -234,13 +234,13 @@
 .docs-search-result-title mark,
 .docs-search-result-excerpt mark {
   background: transparent;
-  color: #a78bfa;
+  color: #667eea;
   font-weight: 600;
 }
 
 :root:not(.dark) .docs-search-result-title mark,
 :root:not(.dark) .docs-search-result-excerpt mark {
-  color: #7c3aed;
+  color: #667eea;
 }
 
 /* ─── Scrollbar inside modal ─── */
