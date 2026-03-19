@@ -125,6 +125,10 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
 /* ════════════════════════════════════════════════════════
    NAV EXTRA COMPONENT STYLES
 ════════════════════════════════════════════════════════ */
+:root:not(.dark) .nextra-border {
+  border-color: #eff2f0 !important;
+}
+
 .nextra-breadcrumb {
   padding: 10px 0;
 }
@@ -157,7 +161,7 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 7px 12px;
+  padding: 8px 12px;
   border-radius: 7px;
   border: none;
   cursor: pointer;
@@ -318,6 +322,15 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
   display: none !important;
 }
 
+.footer-wrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+:root:not(.dark) footer {
+  background: transparent !important;
+  border-color: #eff2f0 !important;
+}
 /* ════════════════════════════════════════════════════════
    SEARCH TRIGGER OVERRIDE (from search.css base)
 ════════════════════════════════════════════════════════ */
@@ -390,6 +403,12 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
 
   .nav-extra {
     margin-left: auto;
+  }
+}
+
+@media (min-width: 48rem) {
+  .x\:md\:text-lg {
+    font-size: 14px;
   }
 }
 
