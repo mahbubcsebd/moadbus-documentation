@@ -235,6 +235,10 @@ div:has(> pre[data-filename]) {
 /* ════════════════════════════════════════════════════════
    NAV EXTRA COMPONENT STYLES
 ════════════════════════════════════════════════════════ */
+:root:not(.dark) .nextra-border {
+  border-color: #eff2f0 !important;
+}
+
 .nextra-breadcrumb {
   padding: 10px 0;
 }
@@ -267,7 +271,7 @@ div:has(> pre[data-filename]) {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 7px 12px;
+  padding: 8px 12px;
   border-radius: 7px;
   border: none;
   cursor: pointer;
@@ -472,6 +476,15 @@ div:has(> pre[data-filename]) {
   display: none !important;
 }
 
+.footer-wrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+:root:not(.dark) footer {
+  background: transparent !important;
+  border-color: #eff2f0 !important;
+}
 /* ════════════════════════════════════════════════════════
    SEARCH TRIGGER OVERRIDE (from search.css base)
 ════════════════════════════════════════════════════════ */
@@ -548,6 +561,12 @@ div:has(> pre[data-filename]) {
 
   .nav-extra {
     margin-left: auto;
+  }
+}
+
+@media (min-width: 48rem) {
+  .x\:md\:text-lg {
+    font-size: 14px;
   }
 }
 

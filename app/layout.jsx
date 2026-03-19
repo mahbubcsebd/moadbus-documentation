@@ -49,7 +49,7 @@ export default async function RootLayout({ children }) {
           toc={{
             backToTop: 'Scroll to top',
           }}
-          // footer={<DocFooter />}
+          footer={null}
           editLink={null}
           feedback={{ content: null }}
         >

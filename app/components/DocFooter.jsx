@@ -6,7 +6,7 @@ export default function DocFooter() {
     <footer
       style={{
         borderTop: "1px solid #1c1c1c",
-        padding: "2rem 1.5rem",
+        padding: "2rem 10px",
         background: "#0a0a0a",
       }}
     >
@@ -29,7 +29,7 @@ export default function DocFooter() {
             height={32}
           />
         </div>
-        <div style={{ display: "flex", gap: "1.5rem" }}>
+        {/* <div style={{ display: "flex", gap: "1.5rem" }}>
           {["Privacy Policy", "Terms of Service", "Security"].map((item) => (
             <a
               key={item}
@@ -43,8 +43,8 @@ export default function DocFooter() {
               {item}
             </a>
           ))}
-        </div>
-        <span style={{ color: "#52525b", fontSize: "0.8rem" }}>
+        </div> */}
+        <span style={{ color: "#717472", fontSize: "0.8rem" }}>
           © {new Date().getFullYear()} think4ever. All rights reserved.
         </span>
       </div>
