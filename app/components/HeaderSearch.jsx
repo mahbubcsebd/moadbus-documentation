@@ -167,7 +167,7 @@ export default function HeaderSearch() {
       >
         <SearchIcon size={14} />
         <span style={{ flex: 1, textAlign: "left" }}>Search...</span>
-        <kbd>Ctrl K</kbd>
+        <kbd>⌘K</kbd>
       </button>
       {/* Ask AI button */}
       <button className="nav-ask-ai-btn">✦ Ask AI</button>

@@ -35,10 +35,10 @@ html, body, * {
   --c-bg:           #ffffff;
   --c-bg-sidebar:   #f9f9fb;
   --c-bg-code:      #f4f4f8;
-  --c-border:       #e4e4e7;
+  --c-border:       #7174720d;
   --c-border-sub:   #f0f0f2;
   --c-text:         #111111;
-  --c-muted:        #6b7280;
+  --c-muted:        #111111;
   --c-faint:        #9ca3af;
   --c-accent:       #667eea;
   --c-accent-bg:    rgba(102,126,234,0.12);
@@ -71,7 +71,7 @@ body { background: var(--c-bg) !important; color: var(--c-text) !important; }
 /* ════════════════════════════════════════════════════════
    NAVBAR
 ════════════════════════════════════════════════════════ */
-.nextra-navbar         { background-color: var(--c-nav-bg) !important; border-bottom: 1px solid var(--c-border) !important; backdrop-filter: blur(14px) !important; -webkit-backdrop-filter: blur(14px) !important; }
+.nextra-navbar         { background-color: var(--c-nav-bg) !important; backdrop-filter: blur(14px) !important; -webkit-backdrop-filter: blur(14px) !important; }
 /* Nextra renders an inner div for blur — remove its background in light */
 .nextra-navbar-blur    { background: transparent !important; }
 .nextra-navbar nav     { height: var(--nextra-navbar-height) !important; }
@@ -79,7 +79,7 @@ body { background: var(--c-bg) !important; color: var(--c-text) !important; }
 /* ════════════════════════════════════════════════════════
    SIDEBAR
 ════════════════════════════════════════════════════════ */
-.nextra-sidebar        { background: var(--c-bg-sidebar) !important; border-right: 1px solid var(--c-border) !important; }
+.nextra-sidebar        { border-right: 1px solid var(--c-border) !important; }
 .nextra-sidebar a      { color: var(--c-muted) !important; font-size: 0.875rem !important; border-radius: 6px !important; transition: color .15s, background .15s !important; }
 .nextra-sidebar a:hover { color: var(--c-text) !important; background: var(--c-border-sub) !important; }
 
@@ -217,7 +217,7 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
 .docs-search-trigger kbd {
   background: var(--c-bg) !important;
   border-color: var(--c-border) !important;
-  color: var(--c-faint) !important;
+  color: var(--c-muted) !important;
 }
 
 /* Search modal — light mode */

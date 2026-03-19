@@ -8,8 +8,6 @@ export default function NavExtra() {
       {/* Ask AI button */}
       {/* <button className="nav-ask-ai-btn">✦ Ask AI</button> */}
 
-      <div className="nav-divider" />
-
       {/* Nav links */}
       <a href="#" className="nav-link">
         Status

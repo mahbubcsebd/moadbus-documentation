@@ -41,7 +41,7 @@ export default async function RootLayout({ children }) {
             defaultMenuCollapseLevel: 1,
             toggleButton: true,
           }}
-          footer={<DocFooter />}
+          // footer={<DocFooter />}
           editLink={null}
           feedback={{ content: null }}
         >
