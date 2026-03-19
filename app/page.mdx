@@ -3,7 +3,7 @@ import beanBag from './assets/images/bean-bag.jpg';
 
 # Introduction
 
-MoadBus is the developer platform that helps you understand code, debug issues,
+think4ever is the developer platform that helps you understand code, debug issues,
 and ship faster because it understands your codebase. Use Agent, Next Edit, and
 Code Completions to get more done.
 
@@ -78,9 +78,9 @@ Add `{line numbers}` after the language to highlight particular lines:
 
 ```javascript {2,4}
 function add(a, b) {
-  const result = a + b; // highlighted
+  const result = a + b;
   console.log(result);
-  return result;         // highlighted
+  return result;
 }
 ```
 
@@ -90,6 +90,122 @@ function add(a, b) {
 npm install -g my-cli
 my-cli init --project my-app
 ```
+
+## Nextra Components
+
+Nextra ships with powerful built-in components you can use in any `.mdx` file.
+
+### Callout
+
+import { Callout } from 'nextra/components'
+
+Use `<Callout>` to highlight important information with colored boxes:
+
+<Callout type="default">
+  This is a **default** callout. Great for general notes and tips.
+</Callout>
+
+<Callout type="info">
+  This is an **info** callout. Use it for helpful context.
+</Callout>
+
+<Callout type="warning">
+  This is a **warning** callout. Use it to warn users about potential issues.
+</Callout>
+
+<Callout type="error">
+  This is an **error** callout. Use it for critical, breaking information.
+</Callout>
+
+### Tabs
+
+import { Tabs } from 'nextra/components'
+
+Use `<Tabs>` to show different content in switchable tabs:
+
+<Tabs items={['npm', 'yarn', 'pnpm']}>
+  <Tabs.Tab>
+    ```bash
+    npm install think4ever
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash
+    yarn add think4ever
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash
+    pnpm add think4ever
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Steps
+
+import { Steps } from 'nextra/components'
+
+Use `<Steps>` to create numbered step-by-step guides:
+
+<Steps>
+### Install the CLI
+
+```bash
+npm install -g think4ever-cli
+```
+
+### Initialize your project
+
+```bash
+think4ever init
+```
+
+### Start coding
+
+Open your editor and start using Agent, Chat, or Completions.
+</Steps>
+
+### Cards
+
+import { Cards } from 'nextra/components'
+
+Use `<Cards>` to display links or features in a clean card grid:
+
+<Cards>
+  <Cards.Card
+    title="Agent"
+    href="/vscode/agent"
+  />
+  <Cards.Card
+    title="Chat"
+    href="/vscode/chat"
+  />
+  <Cards.Card
+    title="Setup Guide"
+    href="/vscode/setup"
+  />
+</Cards>
+
+### FileTree
+
+import { FileTree } from 'nextra/components'
+
+Use `<FileTree>` to visually display folder and file structures:
+
+<FileTree>
+  <FileTree.Folder name="my-project" defaultOpen>
+    <FileTree.Folder name="app" defaultOpen>
+      <FileTree.File name="layout.jsx" />
+      <FileTree.File name="page.mdx" />
+      <FileTree.Folder name="components">
+        <FileTree.File name="NavExtra.jsx" />
+        <FileTree.File name="ChatModal.jsx" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name="next.config.mjs" />
+    <FileTree.File name="package.json" />
+  </FileTree.Folder>
+</FileTree>
 
 ## Learn more
 

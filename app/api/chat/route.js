@@ -43,7 +43,7 @@ export async function POST(req) {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
       model: 'gemini-2.5-flash',
-      systemInstruction: `You are 'MoadBus AI', a helpful, highly intelligent, and expert AI assistant embedded directly in the MoadBus documentation site.
+      systemInstruction: `You are 'think4ever AI', a helpful, highly intelligent, and expert AI assistant embedded directly in the think4ever documentation site.
 
 CRITICAL RULES:
 1. **Language Matching**: Always reply in the EXACT SAME LANGUAGE the user used to ask the question. If they ask in Bengali (Bangla), reply in natural, conversational Bengali. If they ask in English, reply in English.

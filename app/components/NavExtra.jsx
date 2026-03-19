@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AskAIButton from "./AskAIButton";
 import ChatModal from "./ChatModal";
+import MobileNavMenu from "./MobileNavMenu";
+import SearchTriggerButton from "./SearchTriggerButton";
 import ThemeToggle from "./ThemeToggle";
 
 export default function NavExtra() {
@@ -16,29 +19,24 @@ export default function NavExtra() {
 
   return (
     <div className="nav-extra">
-      {/* Ask AI button */}
-      {/* <button
-        className="nav-ask-ai-btn"
-        onClick={() => setIsChatOpen(true)}
-      >
-        ✦ Ask AI
-      </button> */}
+      <div className="nav-extra-desktop">
+        <Link href="#" className="nav-link">
+          Status
+        </Link>
+        <Link href="#" className="nav-link">
+          Blog
+        </Link>
+        <Link href="#" className="nav-link">
+          Support
+        </Link>
+        <ThemeToggle size={16} />
+      </div>
 
-      <div className="nav-divider" />
-
-      {/* Nav links */}
-      <Link href="#" className="nav-link">
-        Status
-      </Link>
-      <Link href="#" className="nav-link">
-        Blog
-      </Link>
-      <Link href="#" className="nav-link">
-        Support
-      </Link>
-
-      {/* Theme toggle */}
-      <ThemeToggle size={16} />
+      <div className="nav-extra-mobile">
+        <SearchTriggerButton mobile />
+        <AskAIButton mobile />
+        <MobileNavMenu />
+      </div>
 
       {/* Chat Modal Layer */}
       <ChatModal

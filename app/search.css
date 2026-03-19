@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 14px;
+  padding: 6px 10px;
   border-radius: 8px;
   font-size: 0.875rem;
   cursor: pointer;
@@ -14,6 +14,11 @@
   background: #111111;
   border: 1px solid #2a2a2a;
   color: #71717a;
+  background: transparent !important;
+}
+
+:root:not(.dark) .docs-search-trigger {
+  border-color: #e4e4e7 !important;
 }
 
 .docs-search-trigger:hover {
@@ -50,7 +55,7 @@
 :root:not(.dark) .docs-search-trigger kbd {
   background: #ffffff;
   border-color: #d4d4d8;
-  color: #a1a1aa;
+  color: #fff;
 }
 
 /* ─── Modal overlay ─── */
@@ -152,7 +157,7 @@
 :root:not(.dark) .docs-search-esc-key {
   background: #f4f4f5;
   border-color: #d4d4d8;
-  color: #a1a1aa;
+  color: #111111;
 }
 
 /* ─── Results ─── */
@@ -209,11 +214,11 @@
   padding: 28px 16px;
   text-align: center;
   font-size: 0.875rem;
-  color: #52525b;
+  color: #fff;
 }
 
 :root:not(.dark) .docs-search-empty {
-  color: #a1a1aa;
+  color: #111111;
 }
 
 .docs-search-section-label {
@@ -223,7 +228,7 @@
   letter-spacing: 0.07em;
   font-weight: 600;
   /* Dark */
-  color: #3f3f46;
+  color: #111111;
 }
 
 :root:not(.dark) .docs-search-section-label {
@@ -257,4 +262,8 @@
 /* Make the nextra navbar nav use relative so our centered search works */
 .nextra-navbar nav {
   position: relative;
+}
+
+:root:not(.dark) .nextra-navbar-blur {
+  border-color: #7174720d;
 }

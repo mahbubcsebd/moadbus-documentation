@@ -96,7 +96,7 @@ export default function ChatModal({ isOpen, onClose }) {
         {/* Header */}
         <div className="chat-modal-header">
           <div className="chat-modal-title">
-            ✦ MoadBus AI
+            ✦ think4ever AI
           </div>
           <button className="chat-modal-close" onClick={onClose} aria-label="Close Chat">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -144,7 +144,7 @@ export default function ChatModal({ isOpen, onClose }) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask a question about MoadBus..."
+              placeholder="Ask a question about think4ever..."
               rows={1}
             />
             <button

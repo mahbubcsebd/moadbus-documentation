@@ -54,7 +54,7 @@ export default function CustomNavbar() {
             letterSpacing: '-0.01em',
           }}
         >
-          MoadBus
+          think4ever
         </span>
       </a>
 
