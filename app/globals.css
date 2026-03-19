@@ -145,10 +145,39 @@ pre { background: var(--c-bg-code) !important; border: 1px solid var(--c-border)
   font-weight: 500;
   background: var(--c-accent);
   color: #fff;
-  transition: opacity .15s;
+  transition: opacity .15s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .nav-ask-ai-btn:hover { opacity: .85; }
 .dark .nav-ask-ai-btn { color: #000; }
+
+.mobile-fab {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-fab {
+    display: inline-flex !important;
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    z-index: 1000;
+    padding: 12px 20px;
+    border-radius: 999px; /* Pill shape */
+    font-size: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.5);
+    background: var(--c-accent);
+    color: white;
+  }
+  .dark .mobile-fab {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+  }
+  .mobile-fab:active {
+    transform: scale(0.95);
+  }
+}
 
 .nav-divider {
   width: 1px;

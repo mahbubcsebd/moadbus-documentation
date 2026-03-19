@@ -170,7 +170,12 @@ export default function HeaderSearch() {
         <kbd>Ctrl K</kbd>
       </button>
       {/* Ask AI button */}
-      <button className="nav-ask-ai-btn">✦ Ask AI</button>
+      <button
+        className="nav-ask-ai-btn"
+        onClick={() => window.dispatchEvent(new Event("open-ask-ai"))}
+      >
+        ✦ Ask AI
+      </button>
 
       {/* Modal */}
       {open && (
